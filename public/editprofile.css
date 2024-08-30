@@ -1,0 +1,376 @@
+:root {
+    --primary-bg: #0e0e0e;
+    --secondary-bg: #181818;
+    --white: #ffffff;
+    --button-bg: #1f78d1;
+    --button-hover-bg: #0b5ca3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--white);
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    padding: 11px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    background-color: var(--secondary-bg);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo img{
+    width: 10rem;
+    padding: 1rem 0 0 0;
+  }
+  
+  header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  header ul li {
+    list-style: none;
+    margin-left: 20px;
+  }
+  
+  header ul li a {
+    font-family: "Against", sans-serif;
+    font-size: 23px;
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+  }
+
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hamburger {
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+  
+  .hamburger input {
+    display: none;
+  }
+  
+  .hamburger svg {
+    height: 3em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line {
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  
+  .hamburger input:checked + svg {
+    transform: rotate(-45deg);
+  }
+  
+  .hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  
+  
+  .sidebar {
+    height: 100%;
+    width: 100%; /* Ubah width menjadi 100% untuk menutupi seluruh layar */
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #0E151D;
+    overflow-x: hidden;
+    transform: translateX(-100%); /* Awalnya sidebar berada di luar layar di sebelah kiri */
+    transition: transform 0.5s ease-in-out; /* Animasi bergerak dari kiri ke kanan */
+    padding-left: 20px;
+  }
+  
+  .sidebar-header {
+    position: relative;
+    height: 4rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .sidebar-header .logo {
+    width: 8rem;
+  }
+  
+  .menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px;
+    gap: 30px;
+  }
+  
+  .menu-column {
+    width: 20%;
+    padding: 1rem;
+    background-color: #101720;
+  }
+  
+  .menu-column h2 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+  }
+  
+  .menu-column a {
+    display: block;
+    color: #b8b8b8;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 5px 0;
+    position: relative; /* diperlukan untuk posisi absolut dari ::after */
+    padding-bottom: 2px;
+  }
+  
+  .menu-column a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .menu-column a:hover::after {
+    width: 100%;
+  }
+  
+  .menu-column a:hover {
+    color: #fff;
+  }
+  
+  .sidebar-header .closebtn {
+    margin-right: 1.5rem;
+    position: relative;
+    display: inline-block;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #333;
+    color: #ffffff;
+    line-height: 60px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar-header .closebtn img {
+    padding-right: 2rem;
+    width: 20px; /* Adjust size based on your image */
+    height: 20  px; /* Adjust size based on your image */
+    cursor: pointer;
+    transition: opacity 0.3s;
+    position: relative;
+    left: 15px;
+  }
+  
+  .sidebar-header .closebtn img:hover {
+    opacity: 0.7; /* Adds a hover effect to the image */
+  }
+  
+  #main {
+    padding: 20px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #121212;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .openbtn:hover {
+    background-color: #333;
+  }
+
+  .user-settings {
+    position: relative;
+    width: 80%;
+    margin: 7rem auto 0;
+    background-color: var(--secondary-bg);
+    padding-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.edit-banner-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    padding: 5px 10px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.edit-banner-btn img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.profile-picture {
+    position: absolute;
+    top: 140px;
+    left: 20px;
+    border: 3px solid var(--secondary-bg);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    background-color: var(--secondary-bg);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit-profile-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    padding: 3px 5px;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.edit-profile-btn img {
+    width: 12px;
+    height: 12px;
+}
+
+.user-info {
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--white);
+}
+
+.input-group input {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #444;
+    background-color: var(--secondary-bg);
+    color: var(--white);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.confirm-btn {
+    margin-top: 10px;
+    background-color: var(--button-bg);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.confirm-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.change-password {
+    margin-top: 30px;
+}
+
+.change-password-btn {
+    background-color: var(--button-bg);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.change-password-btn:hover {
+    background-color: var(--button-hover-bg);
+}
