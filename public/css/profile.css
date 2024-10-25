@@ -8,24 +8,24 @@
     --border: .1rem solid var(--black);
     --red: #e74c3c; /* Warna merah untuk tombol */
   }
-  
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
   }
-  
+
   body {
     background-color: #181818;
     color: #fff;
     overflow-x: hidden;
   }
-  
+
   ::-webkit-scrollbar {
     display: none;
   }
-  
+
   .hamburger {
     position: relative;
     cursor: pointer;
@@ -33,17 +33,17 @@
     padding: 10px 20px;
     z-index: 1000;
   }
-  
+
   .hamburger input {
     display: none;
   }
-  
+
   .hamburger svg {
     height: 3em;
     /* Define the transition for transforming the SVG */
     transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .line {
     fill: none;
     stroke: white;
@@ -54,21 +54,21 @@
     transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
                 stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .line-top-bottom {
     stroke-dasharray: 12 63;
   }
-  
+
   .hamburger input:checked + svg {
     transform: rotate(-45deg);
   }
-  
+
   .hamburger input:checked + svg .line-top-bottom {
     stroke-dasharray: 20 300;
     stroke-dashoffset: -32.42;
   }
-  
-  
+
+
   .sidebar {
     height: 100%;
     width: 100%; /* Ubah width menjadi 100% untuk menutupi seluruh layar */
@@ -82,7 +82,7 @@
     transition: transform 0.5s ease-in-out; /* Animasi bergerak dari kiri ke kanan */
     padding-left: 20px;
   }
-  
+
   .sidebar-header {
     position: relative;
     height: 4rem;
@@ -91,11 +91,11 @@
     align-items: center;
     flex-direction: row;
   }
-  
+
   .sidebar-header .logo {
     width: 8rem;
   }
-  
+
   .menu-container {
     display: flex;
     flex-wrap: wrap;
@@ -103,13 +103,13 @@
     padding: 30px;
     gap: 30px;
   }
-  
+
   .menu-column {
     width: 20%;
     padding: 1rem;
     background-color: #101720;
   }
-  
+
   .menu-column h2 {
     font-size: 18px;
     color: #fff;
@@ -117,7 +117,7 @@
     border-bottom: 2px solid #444;
     padding-bottom: 5px;
   }
-  
+
   .menu-column a {
     display: block;
     color: #b8b8b8;
@@ -127,7 +127,7 @@
     position: relative; /* diperlukan untuk posisi absolut dari ::after */
     padding-bottom: 2px;
   }
-  
+
   .menu-column a::after {
     content: '';
     position: absolute;
@@ -138,15 +138,15 @@
     background-color: #fff;
     transition: width 0.3s ease-in-out;
   }
-  
+
   .menu-column a:hover::after {
     width: 100%;
   }
-  
+
   .menu-column a:hover {
     color: #fff;
   }
-  
+
   .sidebar-header .closebtn {
     margin-right: 1.5rem;
     position: relative;
@@ -159,7 +159,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
+
   .sidebar-header .closebtn img {
     padding-right: 2rem;
     width: 20px; /* Adjust size based on your image */
@@ -169,15 +169,15 @@
     position: relative;
     left: 15px;
   }
-  
+
   .sidebar-header .closebtn img:hover {
     opacity: 0.7; /* Adds a hover effect to the image */
   }
-  
+
   #main {
     padding: 20px;
   }
-  
+
   .openbtn {
     font-size: 20px;
     cursor: pointer;
@@ -187,11 +187,11 @@
     border: none;
     border-radius: 5px;
   }
-  
+
   .openbtn:hover {
     background-color: #333;
   }
-  
+
   header {
     position: absolute;
     top: 0;
@@ -206,29 +206,29 @@
     z-index: 10000;
     background-color: var(--black);
   }
-  
+
   .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .logo img{
     width: 10rem;
     padding: 1rem 0 0 0;
   }
-  
+
   header ul {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   header ul li {
     list-style: none;
     margin-left: 20px;
   }
-  
+
   header ul li a {
     font-family: "Against", sans-serif;
     font-size: 23px;
@@ -238,15 +238,15 @@
     border-radius: 20px;
     transition: all 0.4s ease;
   }
-  
+
   header ul li a:hover {
     color: var(--red);
   }
-  
+
   header ul li a.active {
     color: var(--red);
   }
-  
+
   .profile {
     position: relative;
     display: flex;
@@ -254,7 +254,7 @@
     align-items: center;
     cursor: pointer;
   }
-  
+
   .profile-initial {
     width: 60px;
     height: 60px;
@@ -266,17 +266,17 @@
     border-radius: 50%;
     font-size: 1.5rem;
   }
-  
+
   .profile-details {
     display: flex;
     flex-direction: column;
   }
-  
+
   .profile-details span {
     font-size: 0.9rem;
     color: var(--white);
   }
-  
+
   .profile .dropdown-menu {
     display: none;
     position: absolute;
@@ -308,19 +308,19 @@
     border-bottom: none;
 }
 
-  
-  
+
+
   .navbar-right {
     display: contents;
   }
-  
+
   .search-container {
     position: relative;
     height: 50px;
     width: 50px;
     left: 24rem;
   }
-  
+
   .search-bar {
     position: absolute;
     top: 0;
@@ -337,7 +337,7 @@
     z-index: 10;
     overflow: hidden;
   }
-  
+
   .search-icon {
     cursor: pointer;
     width: 50px;
@@ -349,7 +349,7 @@
     transition: all 0.3s;
     z-index: 100;
   }
-  
+
   .search-bar input {
     flex-grow: 1;
     height: 100%;
@@ -361,7 +361,7 @@
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease-in-out;
   }
-  
+
   .search-bar .close-icon {
     cursor: pointer;
     padding: 0 20px;
@@ -369,26 +369,26 @@
     color: white;
     display: none; /* Initially hidden */
   }
-  
+
   .search-bar.open {
     width: 600px;
     opacity: 1;
     visibility: visible;
     border-radius: 10px;
   }
-  
+
   .search-bar.open .search-icon {
     order: -1; /* Move search icon to the left */
   }
-  
+
   .search-bar.open input {
     opacity: 1; /* Show input field */
   }
-  
+
   .search-bar.open .close-icon {
     display: block; /* Show close icon */
   }
-  
+
 
   .profile-container {
     width: 50rem;
@@ -465,11 +465,36 @@
 .value {
     color: white;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.value input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
     max-width: 150px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.value button {
+    background-color: #3E9AE8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 20rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.value button:hover {
+    background-color: #5ea4f3;
+}
+
 
 .user-role-btn {
     background-color: #3E9AE8;

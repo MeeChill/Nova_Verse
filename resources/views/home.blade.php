@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Manhwa Website</title>
-        <link rel="stylesheet" href="{{asset('home.css')}}">
+        <link rel="stylesheet" href="{{asset('css/home.css')}}">
     </head>
     <body>
 
@@ -17,7 +17,7 @@
                     <path class="line" d="M7 16 27 16"></path>
                     </svg>
                 </label>
-            
+
                 <div id="mySidebar" class="sidebar">
                     <div class="sidebar-header">
                         <img src="logo.png" alt="Logo" class="logo">
@@ -42,8 +42,8 @@
                         <div class="menu-column">
                             <h2>COMICS</h2>
                             <a href="#">Manga</a>
-                            <a href="#">Most Popular Manga</a>  
-                            <a href="#">Browse Manga by Genre</a>  
+                            <a href="#">Most Popular Manga</a>
+                            <a href="#">Browse Manga by Genre</a>
                             <a href="#">Manhwa</a>
                             <a href="#">Most Popular Manhwa</a>
                             <a href="#">Browse Manhwa by Genre</a>
@@ -62,11 +62,11 @@
                         </div>
                     </div>
                 </div>
-            
-                <a class="logo" href="#home"><img src="{{asset("Logo.png")}}"></a> 
-                
+
+                <a class="logo" href="#home"><img src="{{asset("Logo.png")}}"></a>
+
                 </div>
-            
+
                 <div class="search-container">
                     <div class="search-bar">
                         <img src="{{asset('Search_Icon.png')}}" class="search-icon" onclick="toggleSearchBar()">
@@ -76,14 +76,14 @@
                 </div>
 
                 <div class="profile" onclick="toggleDropdown()">
-                    <div class="profile-initial"></div>
+                    <div class="profile-initial">{{session('initial_name')}}</div>
                     <div class="dropdown-menu">
                         <a href="profile">Profile</a>
                         <a href="bookmark.php">Bookmark</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
-                        
+
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout
@@ -93,7 +93,7 @@
                 </div>
                 </header>
 
-                
+
                 <div class="banner-container">
                     <div class="banner-slider">
                         <div class="slider-item">
@@ -215,7 +215,7 @@
                         closeNav();
                     }
                 }
-        
+
                 function openNav() {
                     const sidebar = document.getElementById("mySidebar");
                     sidebar.style.display = "block";
@@ -223,7 +223,7 @@
                         sidebar.style.transform = "translateX(0)";
                     }, 10); // small delay to trigger CSS transition
                 }
-        
+
                 function closeNav() {
                     const sidebar = document.getElementById("mySidebar");
                     sidebar.style.transform = "translateX(-100%)";
@@ -231,51 +231,51 @@
                         sidebar.style.display = "none";
                     }, 500); // match the delay with the transition duration
                 }
-        
+
                 function toggleSearchBar() {
                     var searchBar = document.querySelector('.search-bar');
                     searchBar.classList.toggle('open');
                 }
 
 
-        
+
             function toggleSearchBar() {
             const searchBar = document.querySelector('.search-bar');
             searchBar.classList.toggle('open');
         }
-        
+
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
         let currentSlide = 0;
-        
+
         function showSlide(n) {
             slides.forEach((slide, index) => {
             slide.style.left = `${index * 100}%`;
             slide.style.display = 'block';
             });
-        
+
             dots.forEach(dot => dot.classList.remove('active'));
             dots[n].classList.add('active');
-        
+
             slides[n].style.left = '0';
             currentSlide = n;
         }
-        
+
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => showSlide(index));
         });
-        
+
         setInterval(() => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }, 4000);
-        
+
         // Initial slide display
         showSlide(0);
-        
+
         document.addEventListener('DOMContentLoaded', function() {
             const grid = document.querySelector('.grid');
-        
+
             grid.addEventListener('wheel', function(event) {
                 if (event.deltaY !== 0) {
                     event.preventDefault();
@@ -283,7 +283,7 @@
                 }
             });
         });
-        
+
         </script>
         <script src="{{asset('script.js')}}"></script>
     </body>

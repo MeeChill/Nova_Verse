@@ -264,7 +264,7 @@ header ul li a.active {
   background-color: var(--green);
   color: var(--white);
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .profile-details {
